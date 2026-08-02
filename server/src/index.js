@@ -13,6 +13,10 @@ app.use("/api/auth", authRoutes );
 // grabs variable from .env file
 const PORT = process.env.PORT
 
+
+// middleware needed for app to be able to read json content
+app.use(express.json());
+
 app.listen(PORT, () =>{
     console.log("Server is running on PORT:" + PORT);
     connetctDB();
