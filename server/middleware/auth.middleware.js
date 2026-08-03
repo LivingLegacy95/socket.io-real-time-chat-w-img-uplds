@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-import User from "../models/user.model"
+import User from "../models/user.model.js"
 
 
 // application protection, this is middleware used to authenticate session token before routing user to route to update profile.
@@ -13,7 +13,7 @@ export const protectRoute = async (req,res,next) => {
         if(!decoded){
             return res.status(401).json({message: "Unauthorized - Invalid Token" });
         }
-        const user = await user.findById(decoded.userId).select("-password");
+        const user = await User.findById(decoded.userId).select("-password");
         if(!user){
             return res.status(404).json({message: "User not found" });
         }
