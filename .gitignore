@@ -1,2 +1,4 @@
 // prevents node_modules from being uploaded to github
 node_modules
+
+.env
