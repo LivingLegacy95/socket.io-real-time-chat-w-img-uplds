@@ -1,0 +1,14 @@
+{
+  "name": "full_stack_real_time_chatapp_w_img_uplds",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client/chat_app_w_img_uplds\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client/chat_app_w_img_uplds",
+    "build": "npm run build --prefix client/chat_app_w_img_uplds"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
+  }
+}
