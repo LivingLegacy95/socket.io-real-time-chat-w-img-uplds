@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { axiosInstance } from "../lib/axios";
 
 export const useAuthHook = create((set) => ({
 	authUser: null,
@@ -8,6 +9,13 @@ export const useAuthHook = create((set) => ({
 	isCheckingAuth: true,
 	checkAuth: async () => {
 		try {
-		} catch (error) {}
+			const res = await axiosInstance.get("/auth/check"); // returns a response that allows us to update the state of 'userAuth'.
+			set({ authUser: res.data });
+		} catch (error) {
+			set({ authUser: null });
+			console.log("Error in checkAuth:", error);
+		} finally {
+			set({ isCheckingAuth: false });
+		}
 	},
 }));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import HomePage from "./views/HomePage.jsx";
@@ -9,7 +9,12 @@ import ProfilePage from "./views/ProfilePage.jsx";
 import { useAuthHook } from "./hooks/useAuthHook.js";
 
 const App = () => {
-	const { authUser } = useAuthHook();
+	const { authUser, checkAuth } = useAuthHook();
+
+	useEffect(() => {
+		checkAuth();
+	}, [checkAuth]);
+	console.log({ authUser });
 	return (
 		<div>
 			<Navbar />
