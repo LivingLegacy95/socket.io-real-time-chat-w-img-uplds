@@ -6,8 +6,10 @@ import SignUpPage from "./views/SignUpPage.jsx";
 import LoginPage from "./views/LoginPage.jsx";
 import SettingsPage from "./views/SettingsPage.jsx";
 import ProfilePage from "./views/ProfilePage.jsx";
+import { useAuthHook } from "./hooks/useAuthHook.js";
 
 const App = () => {
+	const { authUser } = useAuthHook();
 	return (
 		<div>
 			<Navbar />
