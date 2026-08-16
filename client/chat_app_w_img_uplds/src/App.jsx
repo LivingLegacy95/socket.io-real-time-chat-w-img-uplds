@@ -7,6 +7,7 @@ import LoginPage from "./views/LoginPage.jsx";
 import SettingsPage from "./views/SettingsPage.jsx";
 import ProfilePage from "./views/ProfilePage.jsx";
 import { useAuthHook } from "./hooks/useAuthHook.js";
+import { Loader } from "lucide-react";
 
 const App = () => {
 	const { authUser, checkAuth } = useAuthHook();
@@ -15,6 +16,12 @@ const App = () => {
 		checkAuth();
 	}, [checkAuth]);
 	console.log({ authUser });
+	if (isCheckingAuth && !authUser)
+		return (
+			<div className="flex items-center justify-center h-screen">
+				<Loader className="size-10 animate-spin" />
+			</div>
+		);
 	return (
 		<div>
 			<Navbar />
