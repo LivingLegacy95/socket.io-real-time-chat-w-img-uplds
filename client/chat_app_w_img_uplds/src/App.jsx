@@ -7,7 +7,7 @@ import LoginPage from "./views/LoginPage.jsx";
 import SettingsPage from "./views/SettingsPage.jsx";
 import ProfilePage from "./views/ProfilePage.jsx";
 import { useAuthHook } from "./hooks/useAuthHook.js";
-import { Loader } from "lucide-react";
+import { Loader, User } from "lucide-react";
 
 const App = () => {
 	const { authUser, checkAuth, isCheckingAuth } = useAuthHook();

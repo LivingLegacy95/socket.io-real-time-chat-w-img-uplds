@@ -18,4 +18,6 @@ export const useAuthHook = create((set) => ({
 			set({ isCheckingAuth: false });
 		}
 	},
+
+	signup: async (data) => {},
 }));
