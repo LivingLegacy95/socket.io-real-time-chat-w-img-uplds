@@ -11,6 +11,7 @@ import {
 	Lock,
 	Loader2,
 } from "lucide-react";
+import AuthImagePattern from "../components/AuthImagePattern.jsx";
 
 const SignUpPage = () => {
 	const [showPassword, setShowPassword] = useState(false);
