@@ -8,6 +8,7 @@ import SettingsPage from "./views/SettingsPage.jsx";
 import ProfilePage from "./views/ProfilePage.jsx";
 import { useAuthHook } from "./hooks/useAuthHook.js";
 import { Loader, User } from "lucide-react";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
 	const { authUser, checkAuth, isCheckingAuth } = useAuthHook();
@@ -44,6 +45,7 @@ const App = () => {
 					element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
 				/>
 			</Routes>
+			<Toaster />
 		</div>
 	);
 };
