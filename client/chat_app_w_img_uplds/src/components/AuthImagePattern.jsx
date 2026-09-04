@@ -1,4 +1,4 @@
-// page not rendiring still need to figure out why
+// page not rendiring still need to figure out why... fixed delete this
 const AuthImagePattern = ({ title, subtitle }) => {
 	return (
 		<div className="hidden lg:flex items-center justify-center bg-base-200 p-12">

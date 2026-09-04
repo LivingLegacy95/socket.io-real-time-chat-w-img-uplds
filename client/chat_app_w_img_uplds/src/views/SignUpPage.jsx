@@ -12,6 +12,7 @@ import {
 	Loader2,
 } from "lucide-react";
 import AuthImagePattern from "../components/AuthImagePattern.jsx";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
 	const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,10 @@ const SignUpPage = () => {
 		password: "",
 	});
 	const { signup, isSigningUp } = useAuthHook();
-	const validateForm = () => {};
+	const validateForm = () => {
+		if (!formData.fullName.trim()) return toast.error("Full name is required");
+		if (!formData.email.trim()) return toast.error("Email is required");
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
