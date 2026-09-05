@@ -31,4 +31,14 @@ export const useAuthHook = create((set) => ({
 			set({ isSigningUp: false });
 		}
 	},
+
+	logout: async (params) => {
+		try {
+			await axiosInstance.post("/auth/logout");
+			set({ authUser: null });
+			toast.success("Logged out succesfully");
+		} catch (error) {
+			toast.error(error.resonpse.data.message);
+		}
+	},
 }));
