@@ -30,17 +30,23 @@ const ProfilePage = () => {
                   transition-all duration-200
                   ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}
                   `}
-							/>
-							<Camera className="w-5 h-5 text-base-200" />
-							<input
-								type="file"
-								id="avatar-upload"
-								className="hidden"
-								accept="image/*"
-								onChange={handleImageUpload}
-								disabled={isUpdatingProfile}
-							/>
+							>
+								<Camera className="w-5 h-5 text-base-200" />
+								<input
+									type="file"
+									id="avatar-upload"
+									className="hidden"
+									accept="image/*"
+									onChange={handleImageUpload}
+									disabled={isUpdatingProfile}
+								/>
+							</label>
 						</div>
+						<p className="text-sm text-zinc-400">
+							{isUpdatingProfile
+								? "Uploading..."
+								: "Click the camera incon to update your photo"}
+						</p>
 					</div>
 				</div>
 			</div>
