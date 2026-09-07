@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthHook } from "../hooks/useAuthHook.js";
+import { Camera } from "lucide-react";
 
 const ProfilePage = () => {
 	const { authUser, isUpdatingProfile, updateProfile } = useAuthHook();
@@ -29,6 +30,15 @@ const ProfilePage = () => {
                   transition-all duration-200
                   ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}
                   `}
+							/>
+							<Camera className="w-5 h-5 text-base-200" />
+							<input
+								type="file"
+								id="avatar-upload"
+								className="hidden"
+								accept="image/*"
+								onChange={handleImageUpload}
+								disabled={isUpdatingProfile}
 							/>
 						</div>
 					</div>
