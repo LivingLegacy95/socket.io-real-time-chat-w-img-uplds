@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuthHook } from "../hooks/useAuthHook.js";
-import { Camera } from "lucide-react";
+import { Camera, Mail, User } from "lucide-react";
 
 const ProfilePage = () => {
 	const { authUser, isUpdatingProfile, updateProfile } = useAuthHook();
@@ -47,6 +47,27 @@ const ProfilePage = () => {
 								? "Uploading..."
 								: "Click the camera incon to update your photo"}
 						</p>
+					</div>
+					{/* user info section */}
+					<div className="space-y-6">
+						<div className="space-y-1.5">
+							<div className="text-sm text-zinc-400 flex items-center gap-2">
+								<User className="size-4" />
+								Full Name
+							</div>
+							<p className="px-4 py-2.5 bg-base-200 rounded-lg border">
+								{authUser?.fullName}
+							</p>
+						</div>
+						<div className="space-y-1.5">
+							<div className="text-sm text-zinc-400 flex items-center gap-2">
+								<Mail className="size-4" />
+								Email Address
+							</div>
+							<p className="px-4 py-2.5 bg-base-200 rounded-lg border">
+								{authUser?.email}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
