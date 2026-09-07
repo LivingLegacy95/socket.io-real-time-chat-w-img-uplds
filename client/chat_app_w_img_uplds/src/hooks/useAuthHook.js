@@ -55,4 +55,6 @@ export const useAuthHook = create((set) => ({
 			toast.error(error.resonpse.data.message);
 		}
 	},
+
+	updateProfile: async (data) => {},
 }));
