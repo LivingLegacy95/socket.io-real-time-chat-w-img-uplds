@@ -21,6 +21,12 @@ app.use(
 	}),
 );
 
+// Increase JSON parsing limit (e.g., to 50 Megabytes)
+app.use(express.json({ limit: "50mb" }));
+
+// Increase URL-encoded parsing limit
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 
