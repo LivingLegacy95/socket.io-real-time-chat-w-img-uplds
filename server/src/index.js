@@ -12,7 +12,8 @@ const app = express();
 dotenv.config();
 
 // middleware needed for app to be able to read json content
-app.use(express.json());
+// Increase JSON parsing limit (e.g., to 50 Megabytes)
+app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(
 	cors({
@@ -20,9 +21,6 @@ app.use(
 		credentials: true,
 	}),
 );
-
-// Increase JSON parsing limit (e.g., to 50 Megabytes)
-app.use(express.json({ limit: "50mb" }));
 
 // Increase URL-encoded parsing limit
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
