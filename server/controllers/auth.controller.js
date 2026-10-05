@@ -75,7 +75,7 @@ export const logout = (req, res) => {
 		res.status(500).json({ message: "Internal Server error" });
 	}
 };
-
+// finally cleared cloudinary error
 export const updateProfile = async (req, res) => {
 	try {
 		const { profilePic } = req.body;
