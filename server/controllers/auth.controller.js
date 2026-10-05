@@ -76,7 +76,6 @@ export const logout = (req, res) => {
 	}
 };
 
-//console throwing error somewhere in this function. "Invalid cloud name"
 export const updateProfile = async (req, res) => {
 	try {
 		const { profilePic } = req.body;
