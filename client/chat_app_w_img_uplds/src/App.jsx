@@ -9,10 +9,11 @@ import ProfilePage from "./views/ProfilePage.jsx";
 import { useAuthHook } from "./hooks/useAuthHook.js";
 import { Loader, User } from "lucide-react";
 import { Toaster } from "react-hot-toast";
+import { useThemeHook } from "./hooks/useThemeHook.js";
 
 const App = () => {
 	const { authUser, checkAuth, isCheckingAuth } = useAuthHook();
-
+	const { theme } = useThemeHook();
 	useEffect(() => {
 		checkAuth();
 	}, [checkAuth]);
@@ -24,7 +25,7 @@ const App = () => {
 			</div>
 		);
 	return (
-		<div data-theme="cupcake">
+		<div data-theme={theme}>
 			<Navbar />
 			<Routes>
 				<Route
