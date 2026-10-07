@@ -32,4 +32,6 @@ export const useChatHook = create((set) => ({
 			set({ isMessagesLoading: false });
 		}
 	},
+	// todo:optimize later
+	setSelectedUser: (selectedUser) => set({ selectedUser }),
 }));
