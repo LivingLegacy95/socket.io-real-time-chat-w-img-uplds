@@ -22,11 +22,14 @@ const SettingsPage = () => {
 						Choose a theme for your chat interface
 					</p>
 				</div>
-				<div className=" grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+				<div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
 					{THEMES.map((t) => (
 						<button
 							key={t}
-							className={`group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors ${theme === t ? "bg-base-200" : "hover:-bg-base-200/50"}`}
+							className={`
+                group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors
+                ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
+              `}
 							onClick={() => setTheme(t)}
 						>
 							<div
@@ -40,7 +43,7 @@ const SettingsPage = () => {
 									<div className="rounded bg-neutral"></div>
 								</div>
 							</div>
-							<span className="text-[11-px] font-medium truncate w-full text-center">
+							<span className="text-[11px] font-medium truncate w-full text-center">
 								{t.charAt(0).toUpperCase() + t.slice(1)}
 							</span>
 						</button>
