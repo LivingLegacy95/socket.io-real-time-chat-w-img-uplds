@@ -1,4 +1,3 @@
-import React from "react";
 import { useAuthHook } from "../hooks/useAuthHook";
 import { Link } from "react-router-dom";
 import { MessageSquare, Settings, LogOut, User } from "lucide-react";

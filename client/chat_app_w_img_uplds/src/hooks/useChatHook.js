@@ -12,12 +12,24 @@ export const useChatHook = create((set) => ({
 	getUsers: async () => {
 		set({ isUsersLoading: true });
 		try {
-			const res = await axiosInstance.get("messages/users");
+			const res = await axiosInstance.get("/messages/users");
 			set({ users: res.data });
 		} catch (error) {
 			toast.error(error.response.data.message);
 		} finally {
 			set({ isUsersLoading: false });
+		}
+	},
+
+	getMessages: async () => {
+		set({ isMessagesLoading: true });
+		try {
+			const res = await axiosInstance.get(`/messages/${userId}`);
+			set({ messages: res.data });
+		} catch (error) {
+			toast.error(error.response.data.message);
+		} finally {
+			set({ isMessagesLoading: false });
 		}
 	},
 }));
