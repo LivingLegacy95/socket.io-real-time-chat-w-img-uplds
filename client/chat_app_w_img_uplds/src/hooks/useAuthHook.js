@@ -9,6 +9,8 @@ export const useAuthHook = create((set) => ({
 	isSigningIn: false,
 	isUpdatingProfile: false,
 	isCheckingAuth: true,
+	onlineUsers: [],
+
 	checkAuth: async () => {
 		try {
 			const res = await axiosInstance.get("/auth/check"); // returns a response that allows us to update the state of 'userAuth'.
