@@ -26,7 +26,7 @@ app.use(
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 // grabs variable from .env file
 const PORT = process.env.PORT;
