@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { toast } from "react-hot-toast";
 import { axiosInstance } from "../lib/axios";
 
+// reusable hook to grab users and messages to set into useState
 export const useChatHook = create((set) => ({
 	messages: [],
 	users: [],
