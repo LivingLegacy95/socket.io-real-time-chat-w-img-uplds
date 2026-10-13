@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { useChatHook } from "../hooks/useChatHookseChatHook";
+import { useChatHook } from "../hooks/useChatHook.js";
+import ChatHeader from "./ChatHeader";
+import MessageInput from "./MessageInput";
 
 function ChatContainer() {
 	const { messages, getMessages, isMessagesLoading, selectedUser } =
@@ -7,10 +9,16 @@ function ChatContainer() {
 	useEffect(() => {
 		getMessages(selectedUser._id);
 	}, [selectedUser._id, getMessages]);
-	// TODO: Finish building out chat container component
+
 	if (isMessagesLoading) return <div>Loading...</div>;
 
-	return <div></div>;
+	return (
+		<div className="flex-1 flex flex-col overflow-auto">
+			<ChatHeader />
+			<p>Messages...</p>
+			<MessageInput />
+		</div>
+	);
 }
 
 export default ChatContainer;
