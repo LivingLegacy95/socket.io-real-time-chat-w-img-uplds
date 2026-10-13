@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useChatHook } from "../hooks/useChatHook.js";
-import ChatHeader from "./ChatHeader";
-import MessageInput from "./MessageInput";
+import ChatHeader from "./ChatHeader.jsx";
+import MessageInput from "./MessageInput.jsx";
 
 function ChatContainer() {
 	const { messages, getMessages, isMessagesLoading, selectedUser } =
