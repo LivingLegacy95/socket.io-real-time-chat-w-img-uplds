@@ -7,7 +7,7 @@ function ChatContainer() {
 	useEffect(() => {
 		getMessages(selectedUser._id);
 	}, [selectedUser._id, getMessages]);
-
+	// TODO: Finish building out chat container component
 	if (isMessagesLoading) return <div>Loading...</div>;
 
 	return <div></div>;
