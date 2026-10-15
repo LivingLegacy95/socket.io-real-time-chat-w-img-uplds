@@ -1,15 +1,27 @@
-import React from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import { useChatHook } from "../hooks/useChatHook.js";
 import { Image, Send, X } from "lucide-react";
 
 const MessageInput = () => {
-	const [text, settext] = useState("");
+	const [text, setText] = useState("");
 	const [imagePreview, setImagePreview] = useState(null);
 	const fileInputRef = useRef(null);
 	const { sendMessage } = useChatHook();
 
-	const handleImageChange = (e) => {};
+	const handleImageChange = (e) => {
+		const file = e.target.files[0];
+		if (!file.type.startsWith("image/")) {
+			toast.error("Please select an image file");
+			return;
+		}
+
+		const reader = new FileReader();
+		reader.onloadend = () => {
+			setImagePreview(reader.result);
+		};
+		reader.readAsDataURL(file);
+	};
 
 	const removeImage = () => {};
 
