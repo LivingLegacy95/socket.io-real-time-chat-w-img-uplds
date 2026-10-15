@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { axiosInstance } from "../lib/axios";
 
 // reusable hook to grab users and messages to set into useState
-export const useChatHook = create((set) => ({
+export const useChatHook = create((set, get) => ({
 	messages: [],
 	users: [],
 	selectedUser: null,
@@ -33,6 +33,19 @@ export const useChatHook = create((set) => ({
 			set({ isMessagesLoading: false });
 		}
 	},
+
+	sendMessage: async (messageData) => {
+		const { selectedUser, messages } = get();
+		try {
+			const res = await axiosInstance.post(
+				`/messages/send/${(selectedUser._id, messageData)}`,
+			);
+			set({ messages: [...messages, res.data] });
+		} catch (error) {
+			toast.error(error.response.data.message);
+		}
+	},
+
 	// todo:optimize later
 	setSelectedUser: (selectedUser) => set({ selectedUser }),
 }));
