@@ -11,7 +11,7 @@ function ChatContainer() {
 		getMessages(selectedUser._id);
 	}, [selectedUser._id, getMessages]);
 
-	if (isMessagesLoading)
+	if (isMessagesLoading) {
 		return (
 			<div className="flex-1 flex flex-cols overflow-auto">
 				<ChatHeader />
@@ -19,6 +19,7 @@ function ChatContainer() {
 				<MessageInput />
 			</div>
 		);
+	}
 
 	return (
 		<div className="flex-1 flex flex-col overflow-auto">
