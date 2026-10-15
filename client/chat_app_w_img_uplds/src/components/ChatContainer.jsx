@@ -23,6 +23,7 @@ function ChatContainer() {
 	return (
 		<div className="flex-1 flex flex-col overflow-auto">
 			<ChatHeader />
+			{/* TODO: FINISH EXPLICIT CONTAINER FOR MESSAGES */}
 			<p>Messages...</p>
 			<MessageInput />
 		</div>
