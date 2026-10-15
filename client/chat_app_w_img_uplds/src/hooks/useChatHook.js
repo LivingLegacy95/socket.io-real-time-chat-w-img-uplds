@@ -43,6 +43,7 @@ export const useChatHook = create((set, get) => ({
 			set({ messages: [...messages, res.data] });
 		} catch (error) {
 			toast.error(error.response.data.message);
+			console.log("Error is in sendMessage function in useChatHook");
 		}
 	},
 
