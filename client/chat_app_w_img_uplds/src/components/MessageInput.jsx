@@ -9,6 +9,7 @@ const MessageInput = () => {
 	const fileInputRef = useRef(null);
 	const { sendMessage } = useChatHook();
 
+	// Function to handle uploading an image
 	const handleImageChange = (e) => {
 		const file = e.target.files[0];
 		if (!file.type.startsWith("image/")) {
