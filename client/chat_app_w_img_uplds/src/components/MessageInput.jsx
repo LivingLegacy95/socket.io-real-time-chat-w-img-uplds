@@ -16,7 +16,7 @@ const MessageInput = () => {
 			toast.error("Please select an image file");
 			return;
 		}
-
+		// The FileReader interface lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using File or Blob objects to specify the file or data to read.
 		const reader = new FileReader();
 		reader.onloadend = () => {
 			setImagePreview(reader.result);
